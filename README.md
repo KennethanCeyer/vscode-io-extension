@@ -25,6 +25,10 @@ $ npm run compile
 - interpolation expression
 - square brackets
 
+# wink :trollface:
+
+- [textmate-io](https://github.com/textmate/io.tmbundle/blob/e8f7b3773544cfc14a7ede7344ed94683f7ed602/Syntaxes/Io.plist)
+
 # todo
 
 - triple quoted string
