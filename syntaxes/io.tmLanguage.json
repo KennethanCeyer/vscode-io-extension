@@ -1,0 +1,174 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.ioon",
+    "name": "io",
+    "scopeName": "source.io",
+    "fileTypes": [
+        ".io"
+    ],
+	"patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#brackets"
+        },
+        {
+            "include": "#supports"
+        },
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+        }
+	],
+	"repository": {
+        "comments": {
+            "patterns": [{
+                "name": "comment.line.io",
+                "match": "(#|//).*"
+            }, {
+                "name": "comment.block.io",
+                "begin": "/\\*",
+                "end": "\\*/"
+            }]
+        },
+		"brackets": {
+			"patterns": [{
+                "begin": "\\[",
+                "end": "\\]|(?=\\*/)",
+                "patterns": [
+                    {
+                        "include": "#brackets"
+                    }
+                ]
+            }]
+		},
+        "supports": {
+            "patterns": [{
+                "name": "support.class.io",
+                "match": "\\b(Object|File|Date|URL|Socket|WebRequest|Server)\\b"
+            }, {
+                "name": "support.class.error.io",
+                "match": "\\b(Exception|Error)\\b"
+            }, {
+                "name": "support.class.test.io",
+                "match": "\\b(Suite|Spec|Matcher)\\b"
+            }, {
+                "name": "support.type.io",
+                "match": "nil|true|false"
+            }, {
+                "name": "support.class.type.io",
+                "match": "\\b(String|Number|Dictionary|Directory|List|Sequence|Range)\\b"
+            }, {
+                "name": "support.function.io",
+                "match": "\\b(method|block|interpolate|at|atPut|with|println|print|run|do)\\b"
+            }, {
+                "name": "support.function.error.io",
+                "match": "\\b(raise)\\b"
+            }, {
+                "name": "support.function.test.io",
+                "match": "\\b(it|describe|expect|toBe|toEqual|toBeTrue|toBeFalse|toContain|toBeString|toBeNil|toThrowWithMessage|toThrowWithType|toThrow|toHaveSlot|toHaveBeenCalled|toHaveBeenCalledWith|beforeEach|afterEach)\\b"
+            }, {
+                "name": "support.function.conditional.io",
+                "match": "\\b(ifTrue)\\b"
+            }, {
+                "name": "support.function.casting.io",
+                "match": "\\b(asCharacter|asString|asNumber|asMutable|asLowercase|asUppercase|asXML|makeFirstCharacterUppercase)\\b"
+            }, {
+                "name": "support.function.slot.io",
+                "match": "\\b(getSlot|setSlot|addSlot|hasSlot|slotNames)\\b"
+            }, {
+                "name": "support.function.proto.io",
+                "match": "\\b(setProtos|setProto|prependProto|appendProto)\\b"
+            }, {
+                "name": "support.function.compound.io",
+                "match": "\\b(start|fetch|connect|now|year|month|day|hour|minute|second|close|exists|min|max|pop|push|join|first|last|keys|hasKey|values|reduce|reverse|reverseReduce|unique|elementsWithName|setItemType|attributes|sort|sortBy|serialize|slice|split|select|selectInPlace|size|indexOf|insertAt|flatten|list|map|asyncSend|append|appendSeq|beginsWithSeq|betweenSeq|message|streamTo|streamWrite|streamReadNextChunk|readBuffer|detect|contains|containsSeq|remove|removeAt|removeFirst|removeLast|setPort|setHostName|argsEvaluatedIn|setPath|doFile|doRelativeFile|writeln|write|getScope|setScope|forwardTo)\\b"
+            }]
+        },
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.io",
+				"match": "\\b(call|clone|return|type)\\b"
+			}, {
+				"name": "keyword.control.error.io",
+				"match": "\\b(try|catch|pass)\\b"
+			}, {
+                "name": "keyword.control.test.io",
+                "match": "\\b(suite|spec|specs)\\b"
+            }, {
+                "name": "keyword.control.conditional.io",
+				"match": "\\b(if|then|else)\\b"
+            }, {
+                "name": "keyword.control.relational.io",
+				"match": "\\b(self)\\b"
+            }, {
+				"name": "keyword.control.loop.io",
+				"match": "\\b(to|loop|repeat|redo|retry|while|for|foreach|break|continue)\\b"
+			}, {
+                "name": "keyword.operator.assignment.comparison.io",
+                "match": "==|!="
+            }, {
+                "name": "keyword.operator.assignment.relational.io",
+                "match": ">=|<=|>|<"
+            }, {
+                "name": "keyword.operator.assignment.logical.io",
+                "match": "&&|\\!|\\|\\|"
+            }, {
+                "name": "keyword.operator.assignment.io",
+                "match": "\\=|::=|:="
+            }, {
+                "name": "keyword.operator.bitwise.io",
+                "match": "\\&|~|\\^|\\|"
+            }, {
+                "name": "keyword.operator.decrement.io",
+                "match": "--"
+            }, {
+                "name": "keyword.operator.increment.io",
+                "match": "\\+\\+"
+            }, {
+                "name": "keyword.operator.arithmetic.io",
+                "match": "%|\\*|/|-|\\+"
+            }, {
+                "name": "keyword.operator.concat.io",
+                "match": "\\.\\."
+            }, {
+                "name": "keyword.operator.word.io",
+                "match": ""
+            }]
+		},
+		"strings": {
+			"name": "string.quoted.double.io",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [{
+                "include": "#string-interpolate"
+            }, {
+                "include": "#string-escape"
+            }]
+        },
+        "string-escape": {
+            "name": "constant.character.escape.io",
+            "match": "\\\\."
+        },
+        "string-interpolate": {
+            "name": "meta.interpolate.expression.io",
+			"begin": "#\\{",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.expression.interpolate.begin.js"
+				}
+			},
+            "end": "\\}",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.expression.interpolate.end.js"
+				}
+			},
+            "patterns": [{
+                "name": "variable.interpolate",
+                "match": ".+(?=\\})"
+            }]
+        }
+	}
+}

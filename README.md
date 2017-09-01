@@ -1,2 +1,42 @@
-# vscode-io-extension
-io language syntax highlighting as vscode extension.
+# io extension for vscode
+
+the io syntax highlighting extension working on vs code
+
+# testing
+
+```bash
+$ npm install gulp -g
+$ npm run compile
+```
+
+# supported
+
+- single / double comments
+- double quoted string
+- known functions / classes / types
+- test functions / classes
+- loop keywords
+- known operators
+- conditional operators
+- increse / decrese keywords
+- assignment keywords
+- interpolation expression
+- square brackets
+
+# todo
+
+- triple quoted string
+- constant litterals
+- math functions
+- hex / octal numeral
+- invalid syntax highlighting
+- unicode types
+- additional functions / classes / types
+- supporting snippets
+
+# qualified
+
+this project qualified `(2 / 100) => 2%` code of open source projects on io languages.
+
+- [io-hashid](https://github.com/KennethanCeyer/io-hashids)
+- [jasmineio](https://github.com/bekkopen/jasmineio)
