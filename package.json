@@ -11,10 +11,9 @@
         "syntax highlighting",
         "vscode",
         "io",
-        "iolang",
-        "extension"
+        "iolang"
     ],
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "kennethceyer",
     "engines": {
         "vscode": "^1.15.0"
