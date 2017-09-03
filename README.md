@@ -46,6 +46,7 @@ $ npm run compile
 
 - invalid syntax highlighting
 - supporting snippets
+- testing for 100 open sources
 
 # qualified
 
