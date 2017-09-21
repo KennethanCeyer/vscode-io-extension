@@ -1,6 +1,6 @@
 # io extension for vscode
 
-![io-extension-for-vscode](https://www.pigno.se/static/assets/images/io_extension_for_vscode.png)
+![io-extension-for-vscode](https://www.pigno.se/static/assets/images/io_extension_for_vscode.png?v=20170921)
 
 the io syntax highlighting extension working on vs code
 

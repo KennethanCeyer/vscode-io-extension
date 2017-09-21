@@ -9,29 +9,54 @@
     "keywords": [
         "languages",
         "syntax highlighting",
+        "debugger",
+        "linter",
+        "formatter",
+        "highlighter",
         "vscode",
         "io",
         "iolang"
     ],
-    "version": "0.0.2",
+    "galleryBanner": {
+        "color": "#191919",
+        "theme": "dark"
+    },
+    "icon": "https://www.pigno.se/static/assets/images/io_extension_for_vscode_logo.png",
+    "version": "0.0.3",
     "publisher": "kennethceyer",
     "engines": {
         "vscode": "^1.15.0"
     },
     "categories": [
-        "Languages"
+        "Languages",
+        "Snippets",
+        "Linters",
+        "Debuggers",
+        "Formatters"
     ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/KennethanCeyer/vscode-io-extension.git"
+    },
     "contributes": {
-        "languages": [{
-            "id": "io",
-            "aliases": ["io"],
-            "extensions": [".io"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "io",
-            "scopeName": "source.io",
-            "path": "./syntaxes/io.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "io",
+                "aliases": [
+                    "io"
+                ],
+                "extensions": [
+                    ".io"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "io",
+                "scopeName": "source.io",
+                "path": "./syntaxes/io.tmLanguage.json"
+            }
+        ]
     }
 }
