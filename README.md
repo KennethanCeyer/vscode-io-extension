@@ -4,6 +4,8 @@
 
 the io syntax highlighting extension working on vs code
 
+[download this extension at the marketplace](https://marketplace.visualstudio.com/items?itemName=kennethceyer.io)
+
 # testing
 
 ```bash
