@@ -17,7 +17,7 @@
         "color": "#191919",
         "theme": "dark"
     },
-    "icon": "/images/logo.png",
+    "icon": "images/logo.png",
     "version": "0.0.3",
     "publisher": "kennethceyer",
     "engines": {
